@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+body {
+  font-size: 16px;
+  background-color: black;
+  overflow: hidden;
+}
+#board {
+  margin: 40px auto;
+}
+.cell {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+.cell.snake {
+  background-color: green;
+}
+.cell.food {
+  /* background-color: yellow; */
+  position: relative;
+}
+.cell.food::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/2821/2821784.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toastify {
+  padding: 12px 20px;
+  color: #ffffff;
+  display: inline-block;
+  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12),
+    0 10px 36px -4px rgba(77, 96, 232, 0.3);
+  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  position: fixed;
+  top: -150px;
+  right: 15px;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.toastify.on {
+  opacity: 1;
+}
